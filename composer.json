@@ -1,0 +1,25 @@
+{
+    "name": "nittics1991/ical",
+    "type": "library",
+    "description": "Concerto ical",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "nittics1991",
+            "email": "bunpabcom@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7",
+        "ext-mbstring": "*",
+        "psr/container": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Movement\\ical\\": "src",
+            "Movement\\ical\\test\\": "test"
+        }
+    },
+    "scripts": {
+    }
+}
