@@ -1,10 +1,11 @@
 <?php
 
 /**
-*   IcalendarCollection
+*   IcalendarServer
 *
 *   @version 200711
 */
+declare(strict_types=1);
 
 namespace Concerto\icalendar;
 
@@ -16,7 +17,7 @@ use Spatie\IcalendarGenerator\Components\{
     Event
 };
 
-use Concerto\icalendar\
+use Concerto\icalendar\{
     IcalendarEvent,
     IcalendarObject,
     IcalendarServerInterface
@@ -27,24 +28,30 @@ class IcalendarServer implements IcalendarServerInterface
     /**
     *   event_property_maps
     *
-    *   @var array [IcalendarEvent porp name => [Event name,callback]
+    *   @var array [IcalendarEvent porp name => [Event name,method name]
     *   @example [
     *       'name2' => ['NAME1', [$this, 'methodName']],
     *   ]
     */
     private $event_property_maps = [
-        'dt_start' => ['startAt', [$this, 'toDateTime']],
-        'dt_end' => ['endsAt', [$this, 'toDateTime']],
-        'dt_create' => ['createdAt', [$this, 'toDateTime']],
-        'dt_update' => ['startAt', [$this, 'toDateTime']],
-        'nm_description' => ['description', [$this, 'toText']],
-        'nm_location' => ['address', [$this, 'toText']],
-        'ar_organizer' => ['organizer', [$this, 'toDateTime']],
-        'ar_attendee' => ['attendee', [$this, 'toDateTime']],
-        'no_priority' => ['startAt', [$this, 'toDateTime']],
-        'tm_alert' => ['startAt', [$this, 'toDateTime']],
-        'nm_alert' => ['startAt', [$this, 'toDateTime']],
+        'dt_start' => ['startAt', 'toDateTime'],
+        'dt_end' => ['endsAt', 'toDateTime'],
+        'dt_create' => ['createdAt', 'toDateTime'],
+        'dt_update' => ['startAt', 'toDateTime'],
+        'nm_description' => ['description', 'toText'],
+        'nm_location' => ['address', 'toText'],
+        'ar_organizer' => ['organizer', 'toAAddress'],
+        'ar_attendee' => ['attendee', 'toAAddress'],
+        'tm_alert' => ['alert', 'toAlertWithTime'],
+        'nm_alert' => ['alert', 'toAlertWithMessage'],
     ];
+    
+    /**
+    *   alert_data
+    *
+    *   @var mixed
+    */
+    private $alert_data;
     
     /**
     *   {inherit}
@@ -52,7 +59,7 @@ class IcalendarServer implements IcalendarServerInterface
     */
     public function send($icalendar)
     {
-        if ($icalendar instanceof IcalendarObject::class) {
+        if ($icalendar instanceof IcalendarObject) {
             throw new RuntimeException(
                 "require IcalendarObject"
             );
@@ -72,7 +79,8 @@ class IcalendarServer implements IcalendarServerInterface
         foreach ($icalendar as $event) {
             $calendar->event(
                 $this->buildEvent($event)
-            )
+            );
+            $this->resetAlert();
         }
         $calendar->get();
     }
@@ -85,18 +93,19 @@ class IcalendarServer implements IcalendarServerInterface
     */
     private function buildEvent(IcalendarEvent $event): Event
     {
-        $result = Event::create()
+        $result = Event::create();
         
         foreach ($event as $name => $val) {
-            list($event_method, $callback) =
+            list($event_method, $this_method) =
                 $this->resolveIcalendarEvent($name);
             
             call_user_func(
-                $callback,
+                [$this, $this_method],
                 $result,
                 $event_method,
                 $val
             );
+        }
         return $result;
     }
     
@@ -129,11 +138,101 @@ class IcalendarServer implements IcalendarServerInterface
         );
     }
     
+    /**
+    *   toText
+    *
+    *   @param Event $event
+    *   @param string $event_method
+    *   @param string $val
+    */
+    private function toText(
+        Event $event,
+        string $event_method,
+        string $val
+    ) {
+        call_user_func(
+            [$event, $event_method],
+            $val
+        );
+    }
     
+    /**
+    *   toAddress
+    *
+    *   @param Event $event
+    *   @param string $event_method
+    *   @param array $ar
+    */
+    private function toAddress(
+        Event $event,
+        string $event_method,
+        string $array
+    ) {
+        foreach ($ar as $address => $text) {
+            call_user_func(
+                [$event, $event_method],
+                $address,
+                $text
+            );
+        }
+    }
     
+    /**
+    *   toAlertWithTime
+    *
+    *   @param Event $event
+    *   @param string $event_method
+    *   @param int $time
+    */
+    private function toAlertWithTime(
+        Event $event,
+        string $event_method,
+        int $time
+    ) {
+        if (!isset($this->alert_data)) {
+            $this->alert_data = $time;
+            return;
+        }
+        
+        call_user_func(
+            [$event, $event_method],
+            $time,
+            $this->alert_data
+        );
+        $this->resetAlert();
+    }
     
+    /**
+    *   toAlertWithMessage
+    *
+    *   @param Event $event
+    *   @param string $event_method
+    *   @param string $message
+    */
+    private function toAlertWithMessage(
+        Event $event,
+        string $event_method,
+        string $message
+    ) {
+        if (!isset($this->alert_data)) {
+            $this->alert_data = $message;
+            return;
+        }
+        
+        call_user_func(
+            [$event, $event_method],
+            $this->alert_data,
+            $message
+        );
+        $this->resetAlert();
+    }
     
-    
-    
-    
+    /**
+    *   resetAlert
+    *
+    */
+    private function resetAlert()
+    {
+        $this->alert_data = null;
+    }
 }

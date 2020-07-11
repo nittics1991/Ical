@@ -5,6 +5,7 @@
 *
 *   @version 200711
 */
+declare(strict_types=1);
 
 namespace Concerto\icalendar;
 
@@ -27,7 +28,6 @@ class IcalendarEvent extends DataContainerValidatable
         'nm_location',
         'ar_organizer',
         'ar_attendee',
-        'no_priority',
         'tm_alert',
         'nm_alert',
     ];
@@ -96,14 +96,6 @@ class IcalendarEvent extends DataContainerValidatable
             return true;
         }
         return $this->isValidMailAddress($val);
-    }
-    
-    public function isValidNo_priority($val)
-    {
-        if (!isset($val)) {
-            return true;
-        }
-        return Validate::isInt($val, 0, 9);
     }
     
     public function isValidTm_alert($val)
