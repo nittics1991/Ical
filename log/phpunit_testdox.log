@@ -1,3 +1,10 @@
 Icalendar Event (test\icalendar\IcalendarEvent)
- [x] First
+ [x] Is valid mail address with data set #0
+ [x] Is valid mail address with data set #1
+ [x] Is valid mail address with data set #2
+ [x] Is valid mail address with data set #3
+ [x] Is valid mail address with data set #4
+ [x] Is valid mail address with data set #5
+ [x] Is valid mail address with data set #6
+ [x] Is valid mail address with data set #7
 

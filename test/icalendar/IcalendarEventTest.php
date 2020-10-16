@@ -15,16 +15,78 @@ use Icalendar\IcalendarEvent;
 class IcalendarEventTest extends ConcertoTestCase
 {
     /**
-    *   @test
+    *
     **/
-    public function first()
+    public function isValidMailAddressProvider()
+    {
+        return [
+            [
+                ['test@example.com' => 'テスト'],
+                true,
+            ],
+            [
+                ['test@example.com' => 1234],
+                false,
+            ],
+            [
+                ['test' => 'テスト'],
+                false,
+            ],
+            
+            //Validate::isEmailTextが数値を受け付けない
+            /*
+            [
+                [1234 => 'テスト'],
+                false,
+            ],
+            */
+            [
+                ['test@example.com' => 'テスト'],
+                true,
+            ],
+            [
+                [],
+                true,
+            ],
+            [
+                null,
+                false,
+            ],
+            [
+                [
+                    'test@example.com' => 'テスト',
+                    'test@example.com' => 'テスト',
+                ],
+                true,
+            ],
+            [
+                [
+                    'test@example.com' => 'テスト',
+                    'test' => 'テスト'
+                ],
+                false,
+            ],
+        ];
+    }
+    
+    /**
+    *   @test
+    *   @dataProvider isValidMailAddressProvider
+    **/
+    public function isValidMailAddress($value, $expect)
     {
 //      $this->markTestIncomplete();
         
         $obj = new IcalendarEvent();
-        $obj->dt_start = '20191031 123456';
         
-        $this->assertEquals('20191031 123456', $obj->dt_start);
+        $this->assertEquals(
+            $expect,
+            $this->callPrivateMethod(
+                $obj,
+                'isValidMailAddress',
+                [$value]
+            )
+        );
         
         
     }
