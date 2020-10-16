@@ -5,6 +5,7 @@
 *
 *   @version 200711
 */
+
 declare(strict_types=1);
 
 namespace schedule_inf\model;

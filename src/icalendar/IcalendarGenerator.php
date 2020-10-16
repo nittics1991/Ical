@@ -1,10 +1,11 @@
 <?php
 
 /**
-*   IcalendarServer
+*   IcalendarGenerator
 *
 *   @version 200711
 */
+
 declare(strict_types=1);
 
 namespace Icalendar;
@@ -16,14 +17,13 @@ use Spatie\IcalendarGenerator\Components\{
     Calendar,
     Event
 };
-
 use Icalendar\{
     IcalendarEvent,
     IcalendarObject,
-    IcalendarServerInterface
+    IcalendarGeneratorInterface
 };
 
-class IcalendarServer implements IcalendarServerInterface
+class IcalendarGenerator implements IcalendarGeneratorInterface
 {
     /**
     *   event_property_maps

@@ -5,12 +5,13 @@
 *
 *   @version 200711
 */
+
 declare(strict_types=1);
 
 namespace Icalendar;
 
-use Icalendar\IcalendarEvent;
 use IteratorAggregate;
+use Icalendar\IcalendarEvent;
 
 class IcalendarObject implements IteratorAggregate
 {

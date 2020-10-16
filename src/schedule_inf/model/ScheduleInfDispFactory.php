@@ -5,9 +5,10 @@
 *
 *   @version 200711
 */
+
 namespace schedule_inf\model;
 
-use \PDO;
+use PDO;
 use Concerto\conf\{
     Config,
     ConfigArray

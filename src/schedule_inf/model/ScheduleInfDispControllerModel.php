@@ -5,6 +5,7 @@
 *
 *   @version 200711
 */
+
 declare(strict_types=1);
 
 namespace schedule_inf\model;
@@ -63,8 +64,8 @@ class ScheduleInfDispControllerModel extends ControllerModel
         
         $this->calendar = $this->factory->getCalendar();
         $config = $this->factory->getConfig();
-        $tm_alert = $config['tm_alert']?? null;
-        $nm_alert = $config['nm_alert']?? null;
+        $tm_alert = $config['tm_alert'] ?? null;
+        $nm_alert = $config['nm_alert'] ?? null;
         
         foreach ($schedule_list as $list) {
             $event = $this->factory->getEvent();
@@ -107,7 +108,7 @@ class ScheduleInfDispControllerModel extends ControllerModel
         if (!isset($config)) {
             $config = $this->facrtory->getWfConfig();
         }
-        return $config[$name]?? '';
+        return $config[$name] ?? '';
     }
     
     /**

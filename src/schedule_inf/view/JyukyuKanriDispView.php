@@ -5,6 +5,7 @@
 *
 *   @version 180918
 */
+
 namespace jyukyu_inf\view;
 
 use Concerto\standard\ViewStandard;

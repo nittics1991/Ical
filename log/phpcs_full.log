@@ -1,0 +1,99 @@
+
+FILE: ...user/document/src/iCal/src/schedule_inf/template/jyukyu_kanri_template.php
+--------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 20 WARNINGS AFFECTING 16 LINES
+--------------------------------------------------------------------------------
+  35 | WARNING | Possible use of short open tags detected; found: <? if
+     |         | ($cd_bumon == 'all') {echo 'selected...
+  37 | WARNING | Possible use of short open tags detected; found: <? foreach
+     |         | ((array)$bumon_list as $list): ...
+  38 | WARNING | Possible use of short open tags detected; found: <? if
+     |         | ($list['cd_bumon'] == $cd_bumon) {ec...
+  38 | WARNING | Line exceeds 120 characters; contains 136 characters
+  39 | WARNING | Possible use of short open tags detected; found: <?
+     |         | endforeach; ?>
+     |         | 
+  48 | WARNING | Possible use of short open tags detected; found: <? foreach
+     |         | ((array)$nendo_list as $list): ...
+  49 | WARNING | Possible use of short open tags detected; found: <? if
+     |         | ($list['kb_nendo'] == $kb_nendo) {ec...
+  49 | WARNING | Line exceeds 120 characters; contains 137 characters
+  50 | WARNING | Possible use of short open tags detected; found: <?
+     |         | endforeach; ?>
+     |         | 
+  56 | WARNING | Possible use of short open tags detected; found: <? if
+     |         | (!$isPastFiscalYear): ?>
+     |         | 
+  57 | WARNING | Line exceeds 120 characters; contains 165 characters
+  57 | WARNING | Possible use of short open tags detected; found: <? if
+     |         | ($chk_nendo_all) {echo 'checked';} ?...
+  59 | WARNING | Possible use of short open tags detected; found: <? endif; ?>
+     |         | 
+  61 | WARNING | Line exceeds 120 characters; contains 153 characters
+  61 | WARNING | Possible use of short open tags detected; found: <? if
+     |         | ($chk_kansei) {echo 'checked';} ?>>
+     |         | 
+  68 | WARNING | Line exceeds 120 characters; contains 131 characters
+  76 | WARNING | Possible use of short open tags detected; found: <?
+     |         | require_once('../_template/environment_...
+ 126 | WARNING | Line exceeds 120 characters; contains 165 characters
+ 132 | WARNING | Line exceeds 120 characters; contains 145 characters
+ 157 | WARNING | Line exceeds 120 characters; contains 136 characters
+--------------------------------------------------------------------------------
+
+
+FILE: ...e/user/document/src/iCal/src/schedule_inf/template/jyukyu_inf_template.php
+--------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 12 WARNINGS AFFECTING 12 LINES
+--------------------------------------------------------------------------------
+  52 | WARNING | Line exceeds 120 characters; contains 189 characters
+  53 | WARNING | Line exceeds 120 characters; contains 129 characters
+ 110 | WARNING | Line exceeds 120 characters; contains 164 characters
+ 113 | WARNING | Line exceeds 120 characters; contains 127 characters
+ 116 | WARNING | Line exceeds 120 characters; contains 175 characters
+ 119 | WARNING | Line exceeds 120 characters; contains 136 characters
+ 127 | WARNING | Line exceeds 120 characters; contains 152 characters
+ 145 | WARNING | Line exceeds 120 characters; contains 142 characters
+ 167 | WARNING | Line exceeds 120 characters; contains 173 characters
+ 170 | WARNING | Line exceeds 120 characters; contains 136 characters
+ 219 | WARNING | Line exceeds 120 characters; contains 128 characters
+ 247 | WARNING | Line exceeds 120 characters; contains 136 characters
+--------------------------------------------------------------------------------
+
+
+FILE: ...ome/user/document/src/iCal/src/schedule_inf/model/QueryScheduleInfDisp.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 25 | ERROR | Method name "QueryScheduleInfDisp::isValidCd_tanto" is not in
+    |       | camel caps format
+--------------------------------------------------------------------------------
+
+
+FILE: /home/user/document/src/iCal/src/icalendar/IcalendarEvent.php
+--------------------------------------------------------------------------------
+FOUND 10 ERRORS AFFECTING 10 LINES
+--------------------------------------------------------------------------------
+  59 | ERROR | Method name "IcalendarEvent::isValidDt_start" is not in camel
+     |       | caps format
+  64 | ERROR | Method name "IcalendarEvent::isValidDt_end" is not in camel caps
+     |       | format
+  69 | ERROR | Method name "IcalendarEvent::isValidDt_create" is not in camel
+     |       | caps format
+  74 | ERROR | Method name "IcalendarEvent::isValidDt_update" is not in camel
+     |       | caps format
+  79 | ERROR | Method name "IcalendarEvent::isValidNm_description" is not in
+     |       | camel caps format
+  84 | ERROR | Method name "IcalendarEvent::isValidNm_location" is not in camel
+     |       | caps format
+  92 | ERROR | Method name "IcalendarEvent::isValidAr_organizer" is not in
+     |       | camel caps format
+  97 | ERROR | Method name "IcalendarEvent::isValidAr_attendee" is not in camel
+     |       | caps format
+ 105 | ERROR | Method name "IcalendarEvent::isValidTm_alert" is not in camel
+     |       | caps format
+ 113 | ERROR | Method name "IcalendarEvent::isValidNm_alert" is not in camel
+     |       | caps format
+--------------------------------------------------------------------------------
+
+

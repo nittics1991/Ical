@@ -5,6 +5,7 @@
 *
 *   @version 200711
 */
+
 declare(strict_types=1);
 
 namespace Icalendar;
@@ -38,7 +39,7 @@ class IcalendarEvent extends DataContainerValidatable
     *   @param mixed $addresses [emailaddress => user_name,...]
     *   @return bool
     */
-    protected function isValidMailAddress($addresses):bool
+    protected function isValidMailAddress($addresses): bool
     {
         if (!is_array($addresses)) {
             return false;

@@ -5,6 +5,7 @@
 *
 *   @version 200711
 */
+
 namespace schedule_inf\model;
 
 use Concerto\standard\Query;

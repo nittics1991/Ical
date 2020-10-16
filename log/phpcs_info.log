@@ -1,0 +1,67 @@
+
+PHP CODE SNIFFER INFORMATION REPORT
+----------------------------------------------------------------------
+Blank lines at end of control structure: 0 [99/99, 100%]
+
+Blank lines at start of control structure: 0 [99/99, 100%]
+
+CamelCase method name:
+	yes   =>   92 ( 89.32%)
+	no    =>   11 ( 10.68%)
+	------------------------
+	total =>  103 (100.00%)
+
+Class defined in namespace: yes [15/15, 100%]
+
+Class opening brace placement: new line [15/15, 100%]
+
+Closure opening brace placement: same line [5/5, 100%]
+
+Control structure defined inline: no [93/93, 100%]
+
+Declarations and side effects mixed: no [25/25, 100%]
+
+EOL char: \n [25/25, 100%]
+
+Function opening brace placement: new line [93/93, 100%]
+
+Line indent: spaces [2015/2015, 100%]
+
+Line length:
+	80 or less  => 2,675 ( 97.13%)
+	81-120      =>    59 (  2.14%)
+	121-150     =>    12 (  0.44%)
+	151 or more =>     8 (  0.29%)
+	-------------------------------
+	total       => 2,754 (100.00%)
+
+Multiple statements on same line: no [491/491, 100%]
+
+Number of newlines at EOF: 1 [23/23, 100%]
+
+One class per file: yes [15/15, 100%]
+
+PHP closing tag at end of PHP-only file: no [23/23, 100%]
+
+PHP constant case: lower [110/110, 100%]
+
+PHP keyword case: lower [823/823, 100%]
+
+PHP short open tag used: no [663/663, 100%]
+
+PHP type case: lower [94/94, 100%]
+
+PascalCase class name: yes [15/15, 100%]
+
+Spaces after control structure open parenthesis:
+	0       => 80 ( 84.21%)
+	newline => 15 ( 15.79%)
+	------------------------
+	total   => 95 (100.00%)
+
+Spaces before control structure close parenthesis: 0 [95/95, 100%]
+
+Use of ELSE IF or ELSEIF: elseif [3/3, 100%]
+
+----------------------------------------------------------------------
+
