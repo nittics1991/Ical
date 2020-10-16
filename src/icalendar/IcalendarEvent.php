@@ -33,15 +33,18 @@ class IcalendarEvent extends DataContainerValidatable
     ];
     
     /**
+    *   isValidMailAddress
     *
+    *   @param mixed $addresses [emailaddress => user_name,...]
+    *   @return bool
     */
-    protected function isValidMailAddress($val)
+    protected function isValidMailAddress($addresses):bool
     {
-        if (!is_array($val)) {
+        if (!is_array($addresses)) {
             return false;
         }
         
-        foreach ($val as $adr => $name) {
+        foreach ($addresses as $adr => $name) {
             if (!Validate::isEmailText($adr)) {
                 return false;
             }
