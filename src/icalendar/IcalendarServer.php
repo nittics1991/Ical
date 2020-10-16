@@ -7,7 +7,7 @@
 */
 declare(strict_types=1);
 
-namespace Concerto\icalendar;
+namespace Icalendar;
 
 use DateTime;
 use DateTimeZone;
@@ -17,7 +17,7 @@ use Spatie\IcalendarGenerator\Components\{
     Event
 };
 
-use Concerto\icalendar\{
+use Icalendar\{
     IcalendarEvent,
     IcalendarObject,
     IcalendarServerInterface

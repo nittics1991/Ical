@@ -7,9 +7,9 @@
 */
 declare(strict_types=1);
 
-namespace Concerto\icalendar;
+namespace Icalendar;
 
-use Concerto\icalendar\IcalendarEvent;
+use Icalendar\IcalendarEvent;
 use IteratorAggregate;
 
 class IcalendarObject implements IteratorAggregate

@@ -7,7 +7,7 @@
 */
 declare(strict_types=1);
 
-namespace Concerto\icalendar;
+namespace Icalendar;
 
 interface IcalendarServerInterface
 {

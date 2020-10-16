@@ -16,8 +16,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Concerto\\icalendar\\": "src",
-            "Concerto\\test\\icalendar\\": "test"
+            "Icalendar\\": "src/icalendar",
+            "test\\icalendar\\": "test/icalendar",
+            "Concerto\\standard\\": "src/standard",
+            "Concerto\\test\\": "test/test"
         }
     },
     "scripts": {
