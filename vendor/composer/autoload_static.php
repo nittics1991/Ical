@@ -7,19 +7,31 @@ namespace Composer\Autoload;
 class ComposerStaticInit8fc931ac60498a1dcba7b93212f1466d
 {
     public static $prefixLengthsPsr4 = array (
+        't' => 
+        array (
+            'test\\icalendar\\' => 15,
+        ),
         'S' => 
         array (
             'Spatie\\IcalendarGenerator\\' => 26,
             'Spatie\\Enum\\' => 12,
         ),
-        'M' => 
+        'I' => 
         array (
-            'Movement\\ical\\test\\' => 19,
-            'Movement\\ical\\' => 14,
+            'Icalendar\\' => 10,
+        ),
+        'C' => 
+        array (
+            'Concerto\\test\\' => 14,
+            'Concerto\\standard\\' => 18,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'test\\icalendar\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/test/icalendar',
+        ),
         'Spatie\\IcalendarGenerator\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/icalendar-generator/src',
@@ -28,13 +40,17 @@ class ComposerStaticInit8fc931ac60498a1dcba7b93212f1466d
         array (
             0 => __DIR__ . '/..' . '/spatie/enum/src',
         ),
-        'Movement\\ical\\test\\' => 
+        'Icalendar\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/icalendar',
+        ),
+        'Concerto\\test\\' => 
         array (
             0 => __DIR__ . '/../..' . '/test',
         ),
-        'Movement\\ical\\' => 
+        'Concerto\\standard\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src/standard',
         ),
     );
 

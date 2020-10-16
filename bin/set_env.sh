@@ -50,3 +50,14 @@ if [[ ! -f ./dist/phpcbf.phar ]] ; then
         #> ./bin/pcbf.sh
     #chmod +x ./bin/pcbf.sh
 fi
+
+#phpunit-skengen
+
+if [[ ! -f ./dist/phpunit-skelgen.phar ]] ; then
+    wget -P ./dist https://phar.phpunit.de/phpunit-skelgen.phar
+    chmod +x ./dist/phpunit-skelgen.phar
+
+    #echo 'cd $(dirname "$0"); cd ..; ./dist/phpunit "$*"' \
+        #> ./bin/punit.sh
+    #chmod +x ./bin/punit.sh
+fi

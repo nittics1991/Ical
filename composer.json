@@ -19,7 +19,7 @@
             "Icalendar\\": "src/icalendar",
             "test\\icalendar\\": "test/icalendar",
             "Concerto\\standard\\": "src/standard",
-            "Concerto\\test\\": "test/test"
+            "Concerto\\test\\": "test"
         }
     },
     "scripts": {
