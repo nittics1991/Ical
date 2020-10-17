@@ -17,7 +17,7 @@
     "autoload": {
         "psr-4": {
             "Icalendar\\": "src/icalendar",
-            "test\\icalendar\\": "test/icalendar",
+            "test\\Icalendar\\": "test/icalendar",
             "Concerto\\standard\\": "src/standard",
             "Concerto\\test\\": "test"
         }

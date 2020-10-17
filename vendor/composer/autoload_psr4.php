@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'test\\icalendar\\' => array($baseDir . '/test/icalendar'),
+    'test\\Icalendar\\' => array($baseDir . '/test/icalendar'),
     'Spatie\\IcalendarGenerator\\' => array($vendorDir . '/spatie/icalendar-generator/src'),
     'Spatie\\Enum\\' => array($vendorDir . '/spatie/enum/src'),
     'Icalendar\\' => array($baseDir . '/src/icalendar'),

@@ -7,7 +7,7 @@
 */
 declare(strict_types=1);
 
-namespace test\icalendar;
+namespace test\Icalendar;
 
 use Concerto\test\ConcertoTestCase;
 use Icalendar\IcalendarEvent;

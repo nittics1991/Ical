@@ -28,7 +28,7 @@ class IcalendarObject implements IteratorAggregate
     *   @param IcalendarEvent $event
     *   @return $this
     */
-    public function add(IcalendarEvent $event): IcalendarCollection
+    public function add(IcalendarEvent $event): IcalendarObject
     {
         $this->events[] = $event;
         return $this;

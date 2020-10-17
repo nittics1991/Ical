@@ -1,4 +1,4 @@
-Icalendar Event (test\icalendar\IcalendarEvent)
+Icalendar Event (test\Icalendar\IcalendarEvent)
  [x] Is valid mail address with data set #0
  [x] Is valid mail address with data set #1
  [x] Is valid mail address with data set #2
@@ -7,4 +7,8 @@ Icalendar Event (test\icalendar\IcalendarEvent)
  [x] Is valid mail address with data set #5
  [x] Is valid mail address with data set #6
  [x] Is valid mail address with data set #7
+
+Icalendar Object (test\Icalendar\IcalendarObject)
+ [x] Add event with data set #0
+ [x] Add event with data set #1
 

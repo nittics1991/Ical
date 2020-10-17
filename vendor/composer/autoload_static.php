@@ -9,7 +9,7 @@ class ComposerStaticInit8fc931ac60498a1dcba7b93212f1466d
     public static $prefixLengthsPsr4 = array (
         't' => 
         array (
-            'test\\icalendar\\' => 15,
+            'test\\Icalendar\\' => 15,
         ),
         'S' => 
         array (
@@ -28,7 +28,7 @@ class ComposerStaticInit8fc931ac60498a1dcba7b93212f1466d
     );
 
     public static $prefixDirsPsr4 = array (
-        'test\\icalendar\\' => 
+        'test\\Icalendar\\' => 
         array (
             0 => __DIR__ . '/../..' . '/test/icalendar',
         ),
